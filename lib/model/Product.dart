@@ -19,8 +19,16 @@ class Product extends StatelessWidget {
           child: Material(
             child: InkWell(
               onTap: () =>
-                  Navigator.of(context).push(new MaterialPageRoute(
-                      builder: (context) => new ProductDetails())),
+                  Navigator.of(context).push(new MaterialPageRoute( // navigator alow to put a new page on top of current product list
+                      builder: (context) => new ProductDetails( // passing all info of the product to the page product_detail
+                        pd_name: product_name,
+                        pd_picture: product_picture,
+                        pd_price: product_price,
+                        pd_old_price: product_old_price,
+
+                      )
+                  )
+                  ),
               child: GridTile(
                 child: Image.asset(
                   product_picture,

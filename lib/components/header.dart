@@ -16,6 +16,7 @@ class _HeaderBarWidgetState extends State<HeaderBarWidget> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0.1,
       backgroundColor: Colors.purple,
       title: Text('Mad\'y Shop'),
       actions: <Widget>[

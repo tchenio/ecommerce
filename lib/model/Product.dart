@@ -40,7 +40,12 @@ class Product extends StatelessWidget {
                   child: ListTile(
                     leading: Text(product_name,
                         style: TextStyle(fontWeight: FontWeight.bold)),
-                    title: Text("\$$product_price",),
+                    title: Text(
+                      "\$$product_price",
+                      style: TextStyle(
+                        color: Colors.red,
+                      ),
+                    ),
                   ),
                 ),
               ),

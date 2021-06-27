@@ -1,12 +1,44 @@
 
-// ignore: import_of_legacy_library_into_null_safe
-import 'package:carousel_pro/carousel_pro.dart' show Carousel;
+
+import 'carousel.dart';
+import 'drawer.dart';
 import 'package:flutter/material.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
+class _HomePageState extends State<HomePage> {
+  @override
+  Widget build(BuildContext context) {
+    Widget imageCarousel = new CarouselWidget();
 
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.purple,
+        title: Text('Mad\'y Shop'),
+        actions: <Widget>[
+          new IconButton(onPressed: (){} , icon: Icon(Icons.search, color: Colors.white,)),
+          new IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart, color:Colors.white))
+        ],
+      ),
+      drawer: DrawerWidget(),
+
+      body: new ListView(
+        children: [
+          imageCarousel,
+          new Padding(padding: const EdgeInsets.all(0.0),
+            child: Text('Categories'),
+          ),
+
+          //horizontal list view
+        ],
+      ),
+    );
+  }
+}
+
+
+/*
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -121,10 +153,15 @@ class _HomePageState extends State<HomePage> {
 
       body: new ListView(
         children: [
-          imageCarousel
+          imageCarousel,
+          new Padding(padding: const EdgeInsets.all(0.0),
+            child: Text('Categories'),
+          ),
+
+          //horizontal list view
         ],
       ),
     );
   }
 }
-
+*/

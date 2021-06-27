@@ -1,8 +1,8 @@
-
-
-import 'carousel.dart';
-import 'drawer.dart';
 import 'package:flutter/material.dart';
+
+import 'components/carousel.dart';
+import 'components/drawer.dart';
+import 'components/header.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -10,17 +10,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+
     Widget imageCarousel = new CarouselWidget();
 
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.purple,
-        title: Text('Mad\'y Shop'),
-        actions: <Widget>[
-          new IconButton(onPressed: (){} , icon: Icon(Icons.search, color: Colors.white,)),
-          new IconButton(onPressed: (){}, icon: Icon(Icons.shopping_cart, color:Colors.white))
-        ],
-      ),
+      appBar: HeaderBarWidget( ),
       drawer: DrawerWidget(),
 
       body: new ListView(

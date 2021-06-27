@@ -1,36 +1,46 @@
+import 'package:ecommerce/components/Products.dart';
+import 'package:ecommerce/components/carousel_widget.dart';
+import 'package:ecommerce/components/category_listview.dart';
+import 'package:ecommerce/components/drawer.dart';
+import 'package:ecommerce/components/header.dart';
 import 'package:flutter/material.dart';
 
-import 'components/carousel.dart';
-import 'components/drawer.dart';
-import 'components/header.dart';
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
 }
+
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-
     Widget imageCarousel = new CarouselWidget();
 
     return Scaffold(
-      appBar: HeaderBarWidget( ),
+      appBar: HeaderBarWidget(),
       drawer: DrawerWidget(),
-
       body: new ListView(
         children: [
           imageCarousel,
-          new Padding(padding: const EdgeInsets.all(0.0),
-            child: Text('Categories'),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text("Catégories"),
           ),
 
           //horizontal list view
+          HorizontalList(),
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: Text("Nouveautés"),
+          ),
+          Container(
+            height: 320.0,
+            child: Products(),
+          )
         ],
       ),
     );
   }
 }
-
 
 /*
 class _HomePageState extends State<HomePage> {

@@ -27,58 +27,152 @@ class _ProductDetailsState extends State<ProductDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: HeaderBarWidget(),
-        drawer: DrawerWidget(),
-        body: new ListView(
-          children: <Widget>[
-            new Container(
-              height: 300.0,
-              child: GridTile(
-                child: Container(
-                  color: Colors.white,
-                  child: Image.asset(widget.pd_picture),
-                ),
-                footer: Container(
-                  color: Colors.white70,
-                  child: ListTile(
-                    leading: Text(
-                      widget.pd_name,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
+      appBar: HeaderBarWidget(),
+      drawer: DrawerWidget(),
+      body: ListView(
+        children: <Widget>[
+          Container(
+            height: 300.0,
+            child: GridTile(
+              child: Container(
+                color: Colors.white,
+                child: Image.asset(widget.pd_picture),
+              ),
+              footer: Container(
+                color: Colors.white70,
+                child: ListTile(
+                  leading: Text(
+                    widget.pd_name,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black,
                     ),
-                    title: new Row(
-                      children: [
-                        Expanded(
-                          child: Text(
-                            "${widget.pd_old_price}",
-                            style: TextStyle(
-                              color: Colors.grey,
-                              decoration: TextDecoration.lineThrough,
-                            ),
+                  ),
+                  title: Row(
+                    children: [
+                      Expanded(
+                        child: Text(
+                          "${widget.pd_old_price}",
+                          style: const TextStyle(
+                            color: Colors.grey,
+                            decoration: TextDecoration.lineThrough,
                           ),
                         ),
-                        Expanded(
-                            child: Text(
-                              "${widget.pd_price}",
-                              style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
+                      ),
+                      Expanded(
+                        child: Text(
+                          "${widget.pd_price}",
+                          style: const TextStyle(
+                            color: Colors.red,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
               ),
             ),
-            Row(
-
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: MaterialButton(
+                  onPressed: () {
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            title: const Text("Quantité"),
+                            content: const Text("Choisi ta quantité"),
+                            actions: <Widget>[
+                              MaterialButton(
+                                child: const Text("close"),
+                                onPressed: () {
+                                  Navigator.of(context).pop(context);
+                                },
+                              ),
+                            ],
+                          );
+                        });
+                  },
+                  color: Colors.white,
+                  textColor: Colors.black54,
+                  elevation: 0.2,
+                  child: Row(
+                    children: const [
+                      Expanded(child: Text("Quantite")),
+                      Expanded(child: Icon(Icons.arrow_drop_down)),
+                    ],
+                  ),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: MaterialButton(
+                  onPressed: () {},
+                  color: Colors.red,
+                  textColor: Colors.black54,
+                  elevation: 0.2,
+                  child: Row(
+                    children: const [
+                      Expanded(child: Text("Buy now")),
+                    ],
+                  ),
+                ),
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.add_shopping_cart),
+                color: Colors.red,
+              ),
+              IconButton(
+                onPressed: () {},
+                icon: const Icon(Icons.favorite_border),
+                color: Colors.red,
+              )
+            ],
+          ),
+          Divider(),
+          ListTile(
+            title: const Text("Détail du produit"),
+            subtitle: Text("Amazing app"),
+          ),
+          Divider(),
+          Row(
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+                child: Text(
+                  "Product name",
+                  style: TextStyle(color: Colors.grey),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.all(5.0),
+                child: Text(widget.pd_name),
+              )
+            ],
+          ),
+          Row(children: <Widget>[
+            (const Padding(
+              padding: EdgeInsets.fromLTRB(12.0, 5.0, 5.0, 5.0),
+              child: Text(
+                "Product brand",
+                style: TextStyle(color: Colors.grey),
+              ),
+            )),
+            Padding(
+              //TODO create brand name in product
+              padding: const EdgeInsets.all(5.0),
+              child: Text(widget.pd_name),
             ),
-          ],
-        ),
+          ])
+        ],
+      ),
     );
   }
 }

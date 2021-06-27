@@ -1,4 +1,4 @@
-import 'package:ecommerce/model/Product.dart';
+import 'package:ecommerce/model/product.dart';
 import 'package:flutter/material.dart';
 
 class Products extends StatefulWidget {
@@ -23,13 +23,13 @@ class _ProductsState extends State<Products> {
     return GridView.builder(
         itemCount: product_list.length,
         gridDelegate:
-            new SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
+        const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
         itemBuilder: (BuildContext context, int index) {
           return Product(
-            product_name: product_list[index]['name'],
-            product_picture: product_list[index]['picture'],
-            product_old_price: product_list[index]['old_price'],
-            product_price: product_list[index]['price'],
+            productName: product_list[index]['name'],
+            productPicture: product_list[index]['picture'],
+            productOldPrice: product_list[index]['old_price'],
+            productPrice: product_list[index]['price'],
           );
         });
   }

@@ -1,14 +1,16 @@
-import 'package:carousel_pro/carousel_pro.dart' show Carousel;
+import 'package:carousel_pro/carousel_pro.dart' show Carousel; //TODO migrate carousel library
 import 'package:flutter/material.dart';
 
 class CarouselWidget extends StatelessWidget {
+  const CarouselWidget({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
-    return new Container(
+    return Container(
       height: 200.0,
-      child: Carousel(
+      child:  Carousel(
         boxFit: BoxFit.cover,
-        images: [
+        images: const [
           AssetImage('images/c1.jpg'),
           AssetImage('images/m2.jpg'),
           AssetImage('images/m1.jpeg'),
@@ -18,7 +20,7 @@ class CarouselWidget extends StatelessWidget {
         ],
         autoplay: false,
         animationCurve: Curves.fastOutSlowIn,
-        animationDuration: Duration(milliseconds: 1000),
+        animationDuration: const Duration(milliseconds: 1000),
       ),
     );
   }

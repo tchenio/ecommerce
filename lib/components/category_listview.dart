@@ -1,4 +1,4 @@
-import 'package:ecommerce/model/Category.dart';
+import 'package:ecommerce/model/category.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalList extends StatelessWidget {
@@ -10,16 +10,16 @@ class HorizontalList extends StatelessWidget {
       height: 100.0,
       child: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
         Category(
-          image_location: "images/categorie/masque-60.png",
-          image_caption: "Skin mask",
+          imageLocation: "images/categorie/masque-60.png",
+          imageCaption: "Skin mask",
         ),
         Category(
-          image_location: "images/categorie/serum-60.png",
-          image_caption: "Oil serum",
+          imageLocation: "images/categorie/serum-60.png",
+          imageCaption: "Oil serum",
         ),
         Category(
-          image_location: "images/categorie/pinceau-60.png",
-          image_caption: "Accessory",
+          imageLocation: "images/categorie/pinceau-60.png",
+          imageCaption: "Accessory",
         ),
       ]),
     );

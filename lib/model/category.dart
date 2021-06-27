@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 class Category extends StatelessWidget {
-  final String image_location;
-  final String image_caption;
+  final  String imageLocation;
+  final String imageCaption;
 
   const Category(
-      {Key? key, required this.image_location, required this.image_caption})
+      {Key? key, required this.imageLocation, required this.imageCaption})
       : super(key: key);
 
   @override
@@ -18,9 +18,9 @@ class Category extends StatelessWidget {
         child: Container(
           width: 110,
           child: ListTile(
-            title: Image.asset(image_location, width: 48, height: 48),
+            title: Image.asset(imageLocation, width: 48, height: 48),
             subtitle: Container(
-              child: Text(image_caption),
+              child: Text(imageCaption),
               alignment: Alignment.topCenter,
             ),
           ),

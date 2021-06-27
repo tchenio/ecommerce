@@ -18,17 +18,17 @@ class _HeaderBarWidgetState extends State<HeaderBarWidget> {
     return AppBar(
       elevation: 0.1,
       backgroundColor: Colors.purple,
-      title: Text('Mad\'y Shop'),
+      title: const Text('Mad\'y Shop'),
       actions: <Widget>[
-        new IconButton(
+        IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.search,
               color: Colors.white,
             )),
-        new IconButton(
+        IconButton(
             onPressed: () {},
-            icon: Icon(Icons.shopping_cart, color: Colors.white))
+            icon: const Icon(Icons.shopping_cart, color: Colors.white))
       ],
     );
   }

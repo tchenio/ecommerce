@@ -71,6 +71,7 @@ flutter:
     - images/categorie/masque-60.png
     - images/categorie/pinceau-60.png
     - images/categorie/serum-60.png
+    - images/products/hills1.jpeg
     - images/products/hills2.jpeg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

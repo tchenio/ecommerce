@@ -1,4 +1,5 @@
 import 'package:ecommerce/pages/product_detail.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class Product extends StatelessWidget {
@@ -30,7 +31,9 @@ class Product extends StatelessWidget {
                         pd_picture: productPicture,
                         pd_price: productPrice,
                         pd_old_price: productOldPrice,
-                      ))),
+                      )
+              )
+              ),
               child: GridTile(
                 child: Image.asset(
                   productPicture,
@@ -38,16 +41,21 @@ class Product extends StatelessWidget {
                 ),
                 footer: Container(
                   color: Colors.white70,
-                  child: ListTile(
-                    leading: Text(productName,
-                        style: const TextStyle(fontWeight: FontWeight.bold)),
-                    title: Text(
-                      "\$$productPrice",
-                      style: const TextStyle(
-                        color: Colors.red,
+                  child:Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children:[
+
+                      Expanded(
+                        child:Text(productName, style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 16.0),
+                        ),
                       ),
-                    ),
-                  ),
+                      Text("${productOldPrice}\u20ac", style:  const TextStyle(decoration: TextDecoration.lineThrough, color: Colors.grey, fontSize: 16.0 ),
+                      ),
+                      Text("${productPrice}\u20ac", style:  const TextStyle(fontWeight: FontWeight.bold, color: Colors.red, fontSize: 16.0 ),
+                      ),
+
+                    ],
+                  )
                 ),
               ),
             ),

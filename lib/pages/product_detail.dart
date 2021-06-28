@@ -1,9 +1,11 @@
 import 'package:ecommerce/components/drawer.dart';
 import 'package:ecommerce/components/header.dart';
+import 'package:ecommerce/components/similar_product.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 
 class ProductDetails extends StatefulWidget {
   final pd_name;
@@ -28,9 +30,9 @@ class _ProductDetailsState extends State<ProductDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HeaderBarWidget(),
-      drawer: DrawerWidget(),
+
       body: ListView(
-        children: <Widget>[
+        children:  <Widget>[
           Container(
             height: 300.0,
             child: GridTile(
@@ -46,25 +48,29 @@ class _ProductDetailsState extends State<ProductDetails> {
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Colors.black,
+                      fontSize: 16.0,
                     ),
                   ),
                   title: Row(
                     children: [
                       Expanded(
                         child: Text(
-                          "${widget.pd_old_price}",
+                          "${widget.pd_old_price}\u20ac",
                           style: const TextStyle(
                             color: Colors.grey,
                             decoration: TextDecoration.lineThrough,
+                            fontSize: 16.0,
                           ),
                         ),
                       ),
                       Expanded(
                         child: Text(
-                          "${widget.pd_price}",
+                          "${widget.pd_price}\u20ac",
                           style: const TextStyle(
                             color: Colors.red,
                             fontWeight: FontWeight.bold,
+                            fontSize: 16.0,
+
                           ),
                         ),
                       ),
@@ -136,12 +142,12 @@ class _ProductDetailsState extends State<ProductDetails> {
               )
             ],
           ),
-          Divider(),
+          const Divider(),
           ListTile(
             title: const Text("Détail du produit"),
             subtitle: Text("Amazing app"),
           ),
-          Divider(),
+          const Divider(),
           Row(
             children: <Widget>[
               const Padding(
@@ -170,7 +176,23 @@ class _ProductDetailsState extends State<ProductDetails> {
               padding: const EdgeInsets.all(5.0),
               child: Text(widget.pd_name),
             ),
-          ])
+          ],
+          ),
+          const Divider(),
+          const Padding(
+              padding: EdgeInsets.all(10.0),
+            child: Text(
+              "Similar product",
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+
+              ),
+            ),
+          ),
+          const SizedBox(
+            height: 360,
+            child: Similar_product(),
+          )
         ],
       ),
     );

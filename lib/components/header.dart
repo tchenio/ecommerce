@@ -1,3 +1,4 @@
+import 'package:ecommerce/pages/home.dart';
 import 'package:flutter/material.dart';
 
 class HeaderBarWidget extends StatefulWidget implements PreferredSizeWidget {
@@ -18,7 +19,10 @@ class _HeaderBarWidgetState extends State<HeaderBarWidget> {
     return AppBar(
       elevation: 0.1,
       backgroundColor: Colors.purple,
-      title: const Text('Mad\'y Shop'),
+      title: InkWell(
+          onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder:(context)=> HomePage())),
+          child: const Text('Mad\'y Shop')
+      ),
       actions: <Widget>[
         IconButton(
             onPressed: () {},

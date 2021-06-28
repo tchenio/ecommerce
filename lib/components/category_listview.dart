@@ -6,10 +6,10 @@ class HorizontalList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 100.0,
       child: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
-        Category(
+         Category(
           imageLocation: "images/categorie/masque-60.png",
           imageCaption: "Skin mask",
         ),

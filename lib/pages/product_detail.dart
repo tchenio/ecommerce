@@ -1,6 +1,6 @@
-import 'package:ecommerce/components/drawer.dart';
+
 import 'package:ecommerce/components/header.dart';
-import 'package:ecommerce/components/similar_product.dart';
+import 'package:ecommerce/components/similar_products.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';

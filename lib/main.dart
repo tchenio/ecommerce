@@ -4,5 +4,5 @@ import 'package:flutter/material.dart';
 import 'pages/home.dart';
 
 void main() {
-  runApp(new MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
+  runApp(MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
 }

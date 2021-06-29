@@ -1,6 +1,8 @@
+import 'package:ecommerce/pages/shopping_cart.dart';
 import 'package:flutter/material.dart';
 
 class DrawerWidget extends StatelessWidget {
+  const DrawerWidget({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -40,7 +42,7 @@ class DrawerWidget extends StatelessWidget {
             ),
           ),
          InkWell(
-            onTap: () {},
+            onTap: ()=>Navigator.of(context).push(MaterialPageRoute(builder: (context)=> ShoppingCart())),
             child: const ListTile(
               title: Text('My Orders'),
               leading: Icon(Icons.shopping_basket, color: Colors.green),

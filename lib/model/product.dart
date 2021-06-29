@@ -7,13 +7,15 @@ class Product extends StatelessWidget {
   final dynamic productPicture;
   final dynamic productOldPrice;
   final dynamic productPrice;
+  final dynamic productQuantity;
 
   const Product(
       {Key? key,
       this.productName,
       this.productPicture,
       this.productOldPrice,
-      this.productPrice})
+      this.productPrice,
+      this.productQuantity})
       : super(key: key);
 
   @override

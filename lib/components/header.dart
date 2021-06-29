@@ -1,9 +1,9 @@
 import 'package:ecommerce/pages/home.dart';
+import 'package:ecommerce/pages/shopping_cart.dart';
 import 'package:flutter/material.dart';
-
 class HeaderBarWidget extends StatefulWidget implements PreferredSizeWidget {
   HeaderBarWidget()
-      : preferredSize = Size.fromHeight(60.0),
+      : preferredSize = const Size.fromHeight(60.0),
         super(key: UniqueKey());
 
   @override
@@ -25,13 +25,13 @@ class _HeaderBarWidgetState extends State<HeaderBarWidget> {
       ),
       actions: <Widget>[
         IconButton(
-            onPressed: () {},
+            onPressed: (){},
             icon: const Icon(
               Icons.search,
               color: Colors.white,
             )),
         IconButton(
-            onPressed: () {},
+            onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context)=> const ShoppingCart())),
             icon: const Icon(Icons.shopping_cart, color: Colors.white))
       ],
     );

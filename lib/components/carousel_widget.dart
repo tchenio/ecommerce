@@ -6,7 +6,7 @@ class CarouselWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       height: 200.0,
       child:  Carousel(
         boxFit: BoxFit.cover,

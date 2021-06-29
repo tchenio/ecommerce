@@ -8,7 +8,7 @@ class HorizontalList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 100.0,
-      child: ListView(scrollDirection: Axis.horizontal, children: <Widget>[
+      child:  ListView(scrollDirection: Axis.horizontal, children: const <Widget>[
          Category(
           imageLocation: "images/categorie/masque-60.png",
           imageCaption: "Skin mask",

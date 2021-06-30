@@ -1,6 +1,7 @@
 
 import 'package:ecommerce/components/header.dart';
 import 'package:ecommerce/components/similar_products.dart';
+import 'package:ecommerce/components/quantity_dialog.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -83,35 +84,7 @@ class _ProductDetailsState extends State<ProductDetails> {
           Row(
             children: [
               Expanded(
-                child: MaterialButton(
-                  onPressed: () {
-                    showDialog(
-                        context: context,
-                        builder: (context) {
-                          return AlertDialog(
-                            title: const Text("Quantité"),
-                            content: const Text("Choisi ta quantité"),
-                            actions: <Widget>[
-                              MaterialButton(
-                                child: const Text("close"),
-                                onPressed: () {
-                                  Navigator.of(context).pop(context);
-                                },
-                              ),
-                            ],
-                          );
-                        });
-                  },
-                  color: Colors.white,
-                  textColor: Colors.black54,
-                  elevation: 0.2,
-                  child: Row(
-                    children: const [
-                      Expanded(child: Text("Quantite")),
-                      Expanded(child: Icon(Icons.arrow_drop_down)),
-                    ],
-                  ),
-                ),
+                child: QuantityDialog(),
               ),
             ],
           ),

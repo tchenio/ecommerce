@@ -14,13 +14,14 @@ class _ShoppingCartState extends State<ShoppingCart> {
     return Scaffold(
         appBar: HeaderBarWidget(),
         body: CartProducts(),
+        
         bottomNavigationBar: Container(
           color: Colors.white,
           child: Row(
               children: <Widget>[
           Expanded(child: ListTile(
           title: Text("Total:"),
-          subtitle: Text("132"),
+          subtitle: Text("132\u20ac"),
         )
     ),
     Expanded(

@@ -7,7 +7,7 @@ class Product extends StatelessWidget {
   final dynamic productPicture;
   final dynamic productOldPrice;
   final dynamic productPrice;
-  final dynamic productQuantity;
+
 
   const Product(
       {Key? key,
@@ -15,12 +15,13 @@ class Product extends StatelessWidget {
       this.productPicture,
       this.productOldPrice,
       this.productPrice,
-      this.productQuantity})
+      })
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      borderOnForeground: false,
       child: Hero(
           tag: productName,
           child: Material(
